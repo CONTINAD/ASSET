@@ -58,19 +58,20 @@ const Hero = () => {
                     className="order-1 md:order-2 flex justify-center"
                 >
                     <div className="relative w-[300px] h-[300px] md:w-[500px] md:h-[500px] animate-float">
-                        {/* Placeholder for 3D Coin */}
-                        <div className="w-full h-full rounded-full bg-gradient-to-br from-[var(--color-primary)] to-black flex items-center justify-center shadow-[0_0_100px_var(--color-primary-glow)] border-4 border-[var(--color-primary)] relative overflow-hidden group">
-                            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-30 mix-blend-overlay"></div>
-                            <span className="text-9xl font-bold text-white drop-shadow-2xl z-10 group-hover:scale-110 transition-transform duration-500">
-                                A
-                            </span>
-
-                            {/* Shine effect */}
-                            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent rotate-45 transform translate-y-full hover:translate-y-[-200%] transition-transform duration-1000"></div>
+                        {/* Coin / Logo Image */}
+                        <div className="w-full h-full flex items-center justify-center relative">
+                            <div className="absolute inset-0 bg-[var(--color-primary)] opacity-20 blur-[100px] rounded-full"></div>
+                            <img
+                                src="/src/assets/logo.png"
+                                alt="$AssAsset Logo"
+                                className="w-full h-full object-contain drop-shadow-2xl z-10"
+                                onError={(e) => {
+                                    e.target.onerror = null;
+                                    e.target.style.display = 'none';
+                                    e.target.parentNode.innerHTML += '<div class="text-white text-center p-4 border border-[var(--color-primary)] rounded-xl bg-black/50">Image not found.<br/>Save as src/assets/logo.png</div>';
+                                }}
+                            />
                         </div>
-
-                        {/* Orbiting elements for 'Tek' feel */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border border-[var(--color-primary)]/20 rounded-full animate-spin-slow"></div>
                     </div>
                 </motion.div>
             </div>

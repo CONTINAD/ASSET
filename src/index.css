@@ -1,9 +1,10 @@
 :root {
-  --color-bg: #0a0a0a;
-  --color-surface: #1a1a1a;
-  --color-primary: #d4af37; /* Gold */
-  --color-primary-glow: rgba(212, 175, 55, 0.5);
-  --color-accent: #b026ff; /* Neon Purple */
+  --color-bg: #121212;
+  --color-surface: #1e1e1e;
+  --color-primary: #ff9500;
+  /* Vibrant Orange */
+  --color-primary-glow: rgba(255, 149, 0, 0.5);
+  --color-accent: #ffffff;
   --color-text: #ffffff;
   --color-text-muted: #a0a0a0;
 
@@ -22,7 +23,12 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-display);
   margin: 0;
   font-weight: 700;
@@ -107,9 +113,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes float {
-  0% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(2deg); }
-  100% { transform: translateY(0px) rotate(0deg); }
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-20px) rotate(2deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
 }
 
 .animate-float {
