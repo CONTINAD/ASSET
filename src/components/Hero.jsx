@@ -13,11 +13,11 @@ const Hero = () => {
     };
 
     return (
-        <section id="hero" className="min-h-screen flex items-center pt-20 relative overflow-hidden">
-            {/* Background Noise/Chaos */}
-            <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
+        <section id="hero" className="min-h-screen flex items-center pt-20 relative overflow-hidden bg-black">
+            {/* Background Grid */}
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,85,0,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,85,0,0.1)_1px,transparent_1px)] bg-[size:40px_40px] opacity-20 pointer-events-none"></div>
 
-            <div className="container grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative z-10">
 
                 {/* Text Content */}
                 <motion.div
@@ -26,38 +26,41 @@ const Hero = () => {
                     transition={{ duration: 0.8 }}
                     className="order-2 md:order-1 text-center md:text-left"
                 >
-                    <h1 className="text-8xl md:text-[10rem] mb-6 leading-[0.8] text-white drop-shadow-[5px_5px_0px_#ff9500]">
-                        THE <br />
-                        <span className="text-[var(--color-primary)] text-stroke">$ASS</span> <br />
-                        <span className="text-white text-stroke">ASSET</span>
+                    <div className="inline-block bg-[#ff5500] text-black font-bold px-4 py-1 mb-6 -rotate-2 transform">
+                        THE ASSET THAT BACKS ITSELF
+                    </div>
+
+                    <h1 className="text-7xl md:text-[8rem] mb-6 leading-[0.85] text-white">
+                        <span className="text-stroke text-transparent">$ASS</span><br />
+                        <span className="text-[#ff5500]">ASSET</span>
                     </h1>
-                    <p className="text-2xl md:text-3xl text-white font-bold mb-8 uppercase tracking-widest bg-black inline-block px-4 -rotate-1">
-                        The Asset That Backs Itself 🍑
+
+                    <p className="text-xl md:text-2xl text-gray-400 mb-8 max-w-lg mx-auto md:mx-0 font-light">
+                        Automated Buybacks & Burns. <br />
+                        Engineered to go up forever. 🍑🔥
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-6 justify-center md:justify-start">
-                        <button className="btn-primary animate-pulse-fast flex items-center justify-center gap-2 text-2xl">
-                            BUY NOW <ArrowRight size={32} />
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-12">
+                        <button className="btn-primary flex items-center justify-center gap-2 hover:bg-white hover:text-black">
+                            BUY NOW <ArrowRight size={24} />
                         </button>
-                        <button className="btn-secondary flex items-center justify-center gap-2 text-2xl">
-                            CHART <ExternalLink size={32} />
+                        <button className="px-8 py-4 border-2 border-white text-white font-display text-xl uppercase hover:bg-white hover:text-black transition-colors flex items-center justify-center gap-2">
+                            CHART <ExternalLink size={24} />
                         </button>
                     </div>
 
-                    <div className="mt-12 flex flex-col items-center md:items-start gap-2">
-                        <span className="text-xl font-bold text-[var(--color-primary)] uppercase animate-bounce">Contract Address:</span>
-                        <div className="flex gap-2 w-full max-w-md">
-                            <code className="bg-black border-2 border-[var(--color-primary)] text-white p-4 font-mono text-lg truncate flex-1">
-                                {contractAddress}
-                            </code>
-                            <button
-                                onClick={copyToClipboard}
-                                className="bg-[var(--color-primary)] text-black p-4 border-2 border-white hover:bg-white hover:text-black transition-colors"
-                                title="Copy CA"
-                            >
-                                <Copy size={24} />
-                            </button>
-                        </div>
+                    <div className="bg-[#111] border border-[#333] p-4 flex flex-col sm:flex-row items-center gap-4 rounded-lg max-w-lg mx-auto md:mx-0">
+                        <span className="text-[#ff5500] font-bold font-mono">CA:</span>
+                        <code className="text-gray-300 font-mono truncate w-full text-center sm:text-left">
+                            {contractAddress}
+                        </code>
+                        <button
+                            onClick={copyToClipboard}
+                            className="p-2 hover:text-[#ff5500] transition-colors"
+                            title="Copy CA"
+                        >
+                            <Copy size={20} />
+                        </button>
                     </div>
                 </motion.div>
 
@@ -68,20 +71,20 @@ const Hero = () => {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="order-1 md:order-2 flex justify-center perspective-1000"
                 >
-                    <div className="relative w-[350px] h-[350px] md:w-[600px] md:h-[600px] animate-shake">
+                    <div className="relative w-[320px] h-[320px] md:w-[500px] md:h-[500px] animate-float">
                         {/* Coin / Logo Image */}
                         <div className="w-full h-full flex items-center justify-center relative">
-                            <div className="absolute inset-0 bg-[var(--color-primary)] opacity-40 blur-[80px] rounded-full animate-pulse"></div>
+                            <div className="absolute inset-0 bg-[#ff5500] opacity-20 blur-[100px] rounded-full"></div>
 
                             {!imageError ? (
                                 <img
                                     src="/src/assets/logo.png"
                                     alt="$AssAsset Logo"
-                                    className="w-full h-full object-contain drop-shadow-[10px_10px_0px_rgba(0,0,0,1)] z-10 hover:scale-110 transition-transform duration-100"
+                                    className="w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(255,85,0,0.3)] z-10 hover:scale-105 transition-transform duration-300"
                                     onError={() => setImageError(true)}
                                 />
                             ) : (
-                                <Logo className="w-full h-full text-[var(--color-primary)] drop-shadow-[10px_10px_0px_rgba(0,0,0,1)] z-10" />
+                                <Logo className="w-full h-full text-[#ff5500] drop-shadow-[0_20px_50px_rgba(255,85,0,0.3)] z-10" />
                             )}
                         </div>
                     </div>

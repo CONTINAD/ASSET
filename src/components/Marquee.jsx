@@ -2,10 +2,10 @@ import React from 'react';
 
 const Marquee = () => {
     return (
-        <div className="bg-[#ff9500] py-2 overflow-hidden border-y-4 border-black">
-            <div className="whitespace-nowrap animate-marquee flex gap-8">
+        <div className="bg-[#ff5500] py-3 overflow-hidden border-y-4 border-black box-border relative z-20">
+            <div className="whitespace-nowrap animate-marquee flex gap-12 items-center">
                 {[...Array(10)].map((_, i) => (
-                    <span key={i} className="text-3xl font-display font-black text-black">
+                    <span key={i} className="text-4xl font-display font-black text-black tracking-wider uppercase flex items-center gap-4">
                         BUY BACKS 🍑 BURNS 🔥 $ASSASSET 🚀 MOON TIME 🌕
                     </span>
                 ))}
