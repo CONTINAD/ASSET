@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Tek from './components/Tek';
 import Footer from './components/Footer';
+import Marquee from './components/Marquee';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Header />
       <main>
         <Hero />
+        <Marquee />
         <Tek />
       </main>
       <Footer />
